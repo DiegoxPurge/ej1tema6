@@ -64,10 +64,60 @@ public static double multiplica(int a, int b){
     int resultado = a * b;
     return resultado;
 }
+
+
 public static void ej2(){
+    /*Escribe un programa que pida la edad por teclado y muestre por pantalla si eres
+    mayor de edad o no. Implementa y utiliza la función:
+    boolean esMayorEdad(int a) // Devuelve verdadero si a>=18, falso en caso contrario
+*/
+
+    int edad1;
+
+    System.out.println("Introduce una edad");
+    edad1= utils.validaInt();
+
+    if (esMayorEdad(edad1)==true){
+        System.out.println("Edad: "+ edad1 + ", es mayor de edad");
+    }else{
+        System.out.println("Edad:  "+ edad1 + ", es menor de edad");
+    }
+
 
 }
+
+public static boolean esMayorEdad (int a){
+    boolean esMayorEdad = false;
+
+    if (a>=18){
+        esMayorEdad = true;
+    }
+    return esMayorEdad;
+}
 public static void ej3(){
+   /* Escribe un programa que pida dos números enteros por teclado y muestre por
+    pantalla cual es el mínimo. Implementa y utiliza la función:
+    int minimo(int a, int b) // Devuelve el menor entre a y b*/
+
+    int a, b;
+    System.out.println("Introduce un numero");
+    a = utils.validaInt();
+    System.out.println("Introduce un numero");
+    b = utils.validaInt();
+
+
+    System.out.println("El numero menor es "+minimo(a,b));
+
+
+}
+
+public static int minimo(int a ,int b) {
+
+    if (a<b){
+        return a;
+    }else {
+        return b;
+    }
 
 }
 public static void ej4(){

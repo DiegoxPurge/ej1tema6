@@ -215,28 +215,143 @@ double precioConIVA(double precio) // Devuelve el precio tras sumarle un 21% de 
 }
 public static double precioConIVA(double precio){
 
-
-
-
     double a = precio * 1.21;
-
 
     return a;
 }
 
 public static void ej7(){
+/*Escribe un programa que pida el ancho y alto de un rectángulo y muestre por
+pantalla su área y su perímetro. Implementa y utiliza las funciones:
+ double perimetroRectangulo(double ancho, double alto) // Devuelve el perímetro
+ double areaRectangulo(double ancho, double alto) // Devuelve el área*/
 
+    System.out.println("Introduce ancho del rectangulo");
+    double ancho = utils.validaDouble();
+    System.out.println("Introduce el alto del rectangulo");
+    double alto = utils.validaDouble();
+
+    System.out.println("El perimetro del rectangulo es " + perimetroRectangulo(ancho,alto));
+    System.out.println("El area del rectangulo es "+ areaRectangulo(ancho,alto));
+}
+
+public static double perimetroRectangulo(double ancho, double alto){
+    double multiplica;
+
+    multiplica= ancho * alto;
+
+    return multiplica;
+}
+
+public static double areaRectangulo(double ancho, double alto){
+    double area;
+
+    area = 2*(ancho+alto);
+    return area;
 }
 
 public static void ej8(){
+/*Escribe un programa que pida un valor N entero y luego muestre: el sumatorio
+des 1 a N, el productorio de 1 a N y el valor intermedio entre 1 y N. Implementa
+y utiliza las funciones:
+int suma1aN(int n) // Devuelve la suma de enteros de 1 a n
+int producto1aN(int n) // Devuelve el producto de enteros de 1 a n
+double intermedio1aN(int n) // Devuelve el valor intermedio entre 1 y n
+*/
+
+    System.out.println("Introduce un valor entero");
+    int n = utils.validaInt();
+
+    System.out.println("Suma de 1 a n " + suma1an(n));
+    System.out.println("Producto de 1 a n " + producto1an(n));
+    System.out.println("Intermedio de 1 a n "+ intermedio1an(n));
+}
+
+public static int suma1an(int n) {
+   int suma = 0;
+    for (int i = 1; i <= n; i++) {
+        suma += i;
+    }
+    return suma;
+
+}
+
+public static int producto1an(int n){
+    int producto = 1;
+    for (int i = 1; i <= n; i++) {
+        producto *=i;
+    }
+
+    return producto;
+}
+
+public static double intermedio1an(int n){
+
+    return (1 + n) / 2.0;
 
 }
 
 public static void ej9(){
+/*Realiza un programa que pida introducir tres valores enteros y nos diga cuál de
+ellos es el más elevado. Impleméntalo creando únicamente una función a la que
+le pasemos dos valores (no tres) y nos devuelva el máximo de los dos valores.*/
+
+
+
+    System.out.println("Introduce numero 1");
+    int a= utils.validaInt();
+    System.out.println("Introduce numero 2");
+    int b= utils.validaInt();
+    System.out.println("Introduce numero 3");
+    int c= utils.validaInt();
+
+
+    System.out.println("El numero mayor es : "+ mayor3(a,b,c));
+}
+
+public static int mayor3(int a, int b, int c){
+    if ( a > b){
+        return a;
+    }else if (b > c){
+        return b;
+    }else {
+        return c;
+    }
+
 
 }
 
 public static void ej10(){
+/*Realiza un programa que lea una fecha introduciendo el día, mes y año por
+separado y nos diga si la fecha es correcta o no. Supondremos que todos los
+meses tienen 30 días. Se debe crear una función donde le pasemos los datos y
+devuelva si es correcta o no.*/
+
+    System.out.print("Introduzca una fecha");
+    System.out.println("Introduzca el día (Max 30)");
+    int dia = utils.validaInt();
+    System.out.println("Introduzca el mes (Por ejemplo Junio = 6)");
+    int mes = utils.validaInt();
+    System.out.println("Introduzca el año");
+    int año = utils.validaInt();
+
+    if (fecha(dia,mes,año)){
+        System.out.println("La fecha "+ dia + "-" + mes +"-"+año+". Es correcta");
+    }else {
+        System.out.println("Fecha incorrecta");
+    }
 
 }
 
+public static boolean fecha(int a, int b, int c) {
+    if (a < 1 || a > 30) {
+        return false;
+    }
+    if (b < 1 || b > 12) {
+        return false;
+    }
+    if (c < 1900 || c > 2025) {
+        return false;
+    }
+    return false;
+}

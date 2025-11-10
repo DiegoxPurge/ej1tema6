@@ -40,6 +40,24 @@ public static void main(String[] args){
             case 10:
                 ej10();
                 break;
+            case 11:
+                ej11();
+                break;
+            case 12:
+                ej12();
+                break;
+            case 13:
+                ej13();
+                break;
+            case 14:
+                ej14();
+                break;
+            case 15:
+                ej15();
+                break;
+            case 16:
+                ej16();
+                break;
             default: // en otro caso
                 System.out.println("ERROR! opcion incorrecta");
         }
@@ -57,6 +75,12 @@ public static void menu(){
     System.out.println("8. Ejercicio 8");
     System.out.println("9. Ejercicio 9");
     System.out.println("10. Ejercicio 10");
+    System.out.println("11. Ejercicio 11");
+    System.out.println("12. Ejercicio 12");
+    System.out.println("13. Ejercicio 13");
+    System.out.println("14. Ejercicio 14");
+    System.out.println("15. Ejercicio 15");
+    System.out.println("16. Ejercicio 16");
 
 
     System.out.print("Introduce opcion valida");
@@ -307,6 +331,7 @@ le pasemos dos valores (no tres) y nos devuelva el máximo de los dos valores.*/
 
 
     System.out.println("El numero mayor es : "+ mayor3(a,b,c));
+    System.out.println("El numero mayor es : "+ mayor2(a,b));
 }
 
 public static int mayor3(int a, int b, int c){
@@ -318,7 +343,14 @@ public static int mayor3(int a, int b, int c){
         return c;
     }
 
+}
 
+public static int mayor2(int a,int b){
+    if (a > b){
+        return a;
+    }else{
+        return b;
+    }
 }
 
 public static void ej10(){
@@ -344,14 +376,62 @@ devuelva si es correcta o no.*/
 }
 
 public static boolean fecha(int a, int b, int c) {
-    if (a < 1 || a > 30) {
+    if (a < 1 || a > 30 || b < 1 || b > 12 || c < 1900 || c > 2025) {
         return false;
     }
-    if (b < 1 || b > 12) {
-        return false;
+    return true;
+}
+public static void ej11(){
+/*11. Realiza un programa que escriba la tabla de multiplicar de un número
+introducido por teclado. Para ello implementa una función que reciba como
+parámetro un número entero y muestre por pantalla la tabla de multiplicar de
+dicho número.*/
+
+    System.out.println("Introduce un numero");
+    int n1 = utils.validaInt();
+
+    multiplicar(n1);
+
+
+}
+
+public static void multiplicar(int a){
+
+    for (int i = 1; i <= 10; i++) {
+        System.out.println(a + "x" + i + "=" +(a * i));
     }
-    if (c < 1900 || c > 2025) {
-        return false;
-    }
-    return false;
+
+}
+
+public static void ej12(){
+/* Realiza un programa que dado un valor en kilómetros nos lo traduce a millas. El
+programa debe tener una función que reciba como parámetro una cantidad en
+kilómetros y nos la devuelva en millas.
+*/
+    System.out.println("Introduce cantidad de KM");
+    double km = utils.validaDouble();
+
+    System.out.println(km + "KM = "+ millas(km)+" millas" );
+
+}
+
+public static double millas(double a){
+    double millas = a * 1.60934;
+
+    return millas;
+}
+
+public static void ej13(){
+        }
+
+public static void ej14(){
+
+}
+
+public static void ej15(){
+
+}
+
+public static void ej16(){
+
 }

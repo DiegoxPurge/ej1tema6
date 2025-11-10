@@ -18,6 +18,12 @@ public class utils {
         }return sc.nextDouble();
     }
 
+    public static String validaString(){
+        while (!sc.hasNext()){
+            System.out.println("Eso no es un string");
+            sc.next();
+        }return sc.nextLine();
+    }
 
 
 }

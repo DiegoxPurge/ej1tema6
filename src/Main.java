@@ -422,16 +422,100 @@ public static double millas(double a){
 }
 
 public static void ej13(){
-        }
+    /*Realiza un programa que calcule el porcentaje de descuento que nos han hecho
+al comprar algo. Se debe solicitar la cantidad sin descuento y la cantidad con el
+descuento aplicado. Se debe crear una función a la que le pasemos ambos
+valores y nos devuelva el descuento.
+*/
+    System.out.println("Introduzca cantidad sin descuento");
+    int n = utils.validaInt();
+    System.out.println("Cantidado con descuento aplicado");
+    int n2 = utils.validaInt();
+
+    System.out.println("El descuento es del "+ descuento(n,n2)+"%");
+}
+
+public static double descuento(int a, int b){
+
+        double resta = a-b;
+        double total = (resta/b)*100;
+
+        return total;
+
+
+/*Descuento aplicado por ejemplo 250 y original 200
+            250 - 200 = 50
+            porcentaje = (50/250)x100 = 20%
+
+*/
+
+}
 
 public static void ej14(){
+/*Escribe una función que muestre por pantalla un triángulo como el del ejemplo.
+Deberá recibir dos parámetros: el carácter que se desea imprimir y el número de
+líneas del triángulo.*/
+
+    System.out.println("Introduce un caracter");
+    String s1 = utils.validaString();
+    System.out.println("Introduzca numero de lineas del triangulo");
+    int lineas = utils.validaInt();
+
+
+
+}
+
+public static void triangulo(String a, int b){
+
+    for (int i = 1; i <= b; i++) {
+        for (int j = 1; j <= b-i ; j++) {
+            System.out.print(" ");
+        }
+        for (int k = 1; k <= 2*i-1 ; k++) {
+            System.out.println(a);
+        }
+
+        System.out.println("");
+    }
 
 }
 
 public static void ej15(){
+/*. Escribe un programa que cree un array de tamaño 100 con los primeros 100
+números naturales. Luego muestra la suma total y la media. Implementa una
+función que calcule la suma de un array y otra que calcule la media de un array.*/
 
+    int array[] = new int[100];
+    int i = 0;
+    for ( i = 0 ; i < array.length; i++) {
+        array[i]= i;
+    }
+    System.out.println("La suma total es de "+sumar(i));
+    System.out.println("La media es de "+ media(i));
 }
 
+public static int sumar(int a){
+     a = 0;
+
+    for (int i = 0; i < 100; i++) {
+        a +=i;
+    }
+
+    return a;
+}
+
+public static int media (int a){
+    a=0;
+    for (int i = 0; i < 100; i++) {
+        a += i;
+
+    }
+
+    int mitja = a/100;
+
+    return mitja;
+
+}
 public static void ej16(){
 
 }

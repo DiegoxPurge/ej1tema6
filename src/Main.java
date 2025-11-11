@@ -457,25 +457,25 @@ Deberá recibir dos parámetros: el carácter que se desea imprimir y el número
 líneas del triángulo.*/
 
     System.out.println("Introduce un caracter");
-    String s1 = utils.validaString();
+    char s1 = utils.validaChar();
     System.out.println("Introduzca numero de lineas del triangulo");
     int lineas = utils.validaInt();
-
+    triangulo(s1, lineas);
 
 
 }
 
-public static void triangulo(String a, int b){
+public static void triangulo(char s1, int b){
 
     for (int i = 1; i <= b; i++) {
         for (int j = 1; j <= b-i ; j++) {
             System.out.print(" ");
         }
         for (int k = 1; k <= 2*i-1 ; k++) {
-            System.out.println(a);
+            System.out.print(s1);
         }
 
-        System.out.println("");
+        System.out.println();
     }
 
 }
@@ -490,6 +490,7 @@ función que calcule la suma de un array y otra que calcule la media de un array
     for ( i = 0 ; i < array.length; i++) {
         array[i]= i;
     }
+
     System.out.println("La suma total es de "+sumar(i));
     System.out.println("La media es de "+ media(i));
 }
@@ -517,5 +518,26 @@ public static int media (int a){
 
 }
 public static void ej16(){
+/*Escribe un programa que cree un array del tamaño indicado por teclado y luego
+lo rellene con valores aleatorios (utiliza Math.random()). Implementa la función
+que rellena un array con valores aleatorios.*/
 
+
+    System.out.println("Introduce tamaño de array");
+    int tamaño = utils.validaInt();
+
+    int array [] = aleatorio(tamaño);
+
+
+    for(int num : array){
+        System.out.println(num + " ");
+    };
+}
+
+public static int [] aleatorio(int tamaño){
+    int array [] = new int[tamaño];
+    for (int i = 0; i < tamaño; i++) {
+        array[i] = (int)(Math.random()*10);
+    }
+    return array;
 }

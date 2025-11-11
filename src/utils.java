@@ -18,11 +18,11 @@ public class utils {
         }return sc.nextDouble();
     }
 
-    public static String validaString(){
+    public static char validaChar(){
         while (!sc.hasNext()){
             System.out.println("Eso no es un string");
             sc.next();
-        }return sc.nextLine();
+        }return sc.next().charAt(0); // importante
     }
 
 
